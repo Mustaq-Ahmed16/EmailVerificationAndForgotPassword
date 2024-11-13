@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login Page</title>
+</head>
+<body>
+
+<h1>Stock Market Investment platform</h1>
+<h2>Login Here</h2>
+
+<div th:if="${errorMsg}">
+	<h3 style="color:red;" th:text="${errorMsg}"></h3> 
+	
+</div>
+
+<form th:action="@{/loginForm}" th:object="${user}" method="post">
+	
+	Email :<input type="text" th:field="*{email}"> <br><br>
+	Password :<input type="password" th:field="*{password}"> <br><br>
+	
+	<input type="submit" value="Login"/>
+  
+</form>
+
+<br/> <br/>
+
+<a href="index.html"> Home </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="regPage">Register</a>
+</body>
+</html>
+

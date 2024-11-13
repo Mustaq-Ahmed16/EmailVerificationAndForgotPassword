@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Stock Market Investment platform</h1>
+<div th:if="${succesMsg}">
+	<h3 style="color:green;" th:text="${succesMsg}"></h3> 
+	
+</div>
+<div th:if="${errorMsg}">
+	<h3 style="color:red;" th:text="${errorMsg}"></h3> 
+	
+</div>
+
+<form th:action="@{/regForm}" th:object="${user}" method="post">
+	Name :<input type="text" th:field="*{name}"> <br><br>
+	Email :<input type="text" th:field="*{email}"> <br><br>
+	Password :<input type="password" th:field="*{password}"> <br><br>
+	Phone number :<input type="text" th:field="*{number}"> <br><br>
+	<input type="submit" value="Register"/>
+  
+</form>
+
+<br/> <br/>
+
+<a href="index.html"> Home</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="loginPage">Login</a>
+</body>
+</html>
+
+
